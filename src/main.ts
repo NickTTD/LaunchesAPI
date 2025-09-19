@@ -1,5 +1,6 @@
 import './style.css'
 import { createCard } from './Card/Card'
+import { createLaunchDetailPage, type Launch } from './LaunchDetail/LaunchDetail'
 
 const container = document.querySelector<HTMLDivElement>('#app')!
 
@@ -41,18 +42,39 @@ async function createLaunchGrid() {
     }
   } else {
     // Usar los datos reales de la API
-    launches.forEach((launch: any, index: number) => {
+    launches.forEach((launch: Launch) => {
       const card = createCard({
         title: launch.name,
         textColor: '#bf0bd7ff',
         textBgColor: '#1f2937',
         imageUrl: launch.image
       })
+      
+      // Agregar event listener para navegar a la página de detalles
+      card.addEventListener('click', () => {
+        showLaunchDetail(launch)
+      })
+      
+      // Cursor pointer para indicar que es clickeable
+      card.style.cursor = 'pointer'
+      
       grid.appendChild(card)
     })
   }
   
   container.appendChild(grid)
+}
+
+// Función para mostrar la página de detalles
+function showLaunchDetail(launch: Launch) {
+  const detailPage = createLaunchDetailPage(launch)
+  document.body.appendChild(detailPage)
+  
+  // Ocultar el contenido principal
+  const mainContent = document.querySelector('#app')
+  if (mainContent) {
+    (mainContent as HTMLElement).style.display = 'none'
+  }
 }
 
 // Inicializar la aplicación

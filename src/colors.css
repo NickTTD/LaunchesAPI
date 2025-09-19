@@ -1,0 +1,21 @@
+/* variables.css */
+:root {
+  /* Variables de color para consistencia */
+  --primary-orange: #fd7a00;
+  --secondary-orange: #ffb46d;
+  --dark-bg: #242424;
+  --darker-bg: #1a1a1a;
+  --card-bg: rgba(26, 26, 26, 0.8);
+  --border-color: #404040;
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  
+  /* Variables adicionales */
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --warning-color: #f59e0b;
+  --blur-bg: rgba(36, 36, 36, 0.95);
+  --shadow-primary: 0 4px 6px rgba(255, 123, 0, 0.3);
+  --shadow-hover: 0 6px 12px rgba(255, 123, 0, 0.4);
+  --gradient-primary: linear-gradient(90deg, var(--secondary-orange), var(--primary-orange));
+}
