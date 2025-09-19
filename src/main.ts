@@ -1,24 +1,25 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import { createCard } from './Card/Card'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const container = document.querySelector<HTMLDivElement>('#app')!
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const grid = document.createElement('div')
+grid.style.display = 'grid'
+grid.style.gridTemplateColumns = 'repeat(3, 1fr)'
+grid.style.gridTemplateRows = 'repeat(3, 1fr)'
+grid.style.gap = '1rem'
+grid.style.width = '50vw'
+grid.style.height = '100vh'
+grid.style.padding = '1rem'
+
+for (let i = 1; i <= 9; i++) {
+  const card = createCard({
+    title: `Card ${i}`,
+    textColor: '#bf0bd7ff', // azul
+    textBgColor: '#1f2937' // fondo del texto
+  })
+  grid.appendChild(card)
+}
+
+container.appendChild(grid)
+
