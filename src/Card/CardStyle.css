@@ -1,0 +1,28 @@
+.card {
+  width: 800px;             /* valor por defecto */
+  height: 800px;            /* valor por defecto */
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  font-family: "Bitcount Ink", monospace;
+  background-color: #ffffff;
+}
+
+.card.dark {
+  background-color: #1a1a1a;
+}
+
+.card-text-container {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #1f2937; /* fondo del texto por defecto */
+}
+
+.card-text {
+  font-weight: bold;
+  color: #ffffff; /* color de texto por defecto */
+}
