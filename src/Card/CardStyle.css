@@ -1,6 +1,6 @@
 .card {
-  width: 800px;             /* valor por defecto */
-  height: 800px;            /* valor por defecto */
+  width: 300px;             /* valor por defecto */
+  height: 300px;            /* valor por defecto */
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -9,6 +9,8 @@
   overflow: hidden;
   font-family: "Bitcount Ink", monospace;
   background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
 .card.dark {
